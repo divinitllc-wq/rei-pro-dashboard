@@ -11,8 +11,50 @@
         <header>
             <h1>REI Pro Dashboard</h1>
         </header>
-        <main>
-            <p>Welcome to the REI Pro Dashboard</p>
+        <nav>
+            <button onclick="showTab('dashboard')">Dashboard</button>
+            <button onclick="showTab('deals')">Deals</button>
+            <button onclick="showTab('contacts')">Contacts</button>
+            <button onclick="showTab('calculator')">Calculator</button>
+            <button onclick="showTab('settings')">Settings</button>
+        </nav>
+
+        <!-- Dashboard Tab -->
+        <main id="dashboard" class="tab active">
+            <h2>Dashboard</h2>
+            <p>Total Deals: <span id="statDeals">0</span></p>
+            <p>Total Contacts: <span id="statContacts">0</span></p>
+        </main>
+
+        <!-- Deals Tab -->
+        <main id="deals" class="tab">
+            <h2>Deals</h2>
+            <button onclick="addDeal()">Add Deal</button>
+            <div id="dealsList"></div>
+        </main>
+
+        <!-- Contacts Tab -->
+        <main id="contacts" class="tab">
+            <h2>Contacts</h2>
+            <button onclick="addContact()">Add Contact</button>
+            <div id="contactsList"></div>
+        </main>
+
+        <!-- Calculator Tab -->
+        <main id="calculator" class="tab">
+            <h2>MAO Calculator</h2>
+            <label>ARV (After Repair Value): <input type="number" id="arv" placeholder="0"></label>
+            <label>Rehab Cost: <input type="number" id="rehab" placeholder="0"></label>
+            <label>Asking Price: <input type="number" id="asking" placeholder="0"></label>
+            <button onclick="calc()">Calculate</button>
+            <div id="result"></div>
+        </main>
+
+        <!-- Settings Tab -->
+        <main id="settings" class="tab">
+            <h2>Settings</h2>
+            <label>Company Name: <input type="text" id="company" placeholder="Your Company"></label>
+            <button onclick="saveSettings()">Save Settings</button>
         </main>
     </div>
     <script src="script.js"></script>
